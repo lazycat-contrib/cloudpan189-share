@@ -8,9 +8,7 @@ author: xxcheng123
 application:
     subdomain: cloudpan189-share
     background_task: true
-{{if .U.multi_instance}}
-        multi_instance: true
-{{end}}
+
     public_path:
         - /
 
@@ -25,11 +23,7 @@ services:
         environment:
         binds:
             - /lzcapp/var/data:/app/data
-{{if .U.multi_instance}}
-            - /lzcapp/document/media:/app/media_dir
-{{else}}
             - /lzcapp/var/media:/app/media_dir
-{{end}}
 
 
 locales:
@@ -43,6 +37,4 @@ locales:
         name: "CloudPan189 Share"
         description: "A smart file sharing and management tool specifically designed for Tianyi Cloud Drive. This system can convert shared links from Tianyi Cloud Drive into a standard directory structure and provide a unified file access interface through the WebDAV protocol."
 
-ext_config:
-    enable_document_access: true
-    enable_media_access: true
+
