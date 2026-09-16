@@ -1,0 +1,41 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/cloudpan189-share.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: cloudpan189-share
+
+build:
+  run_buildscript: false
+
+images:
+  # 上游 xxcheng123/cloudpan189-share 有 v 前缀三段 SemVer（v1.0.1 ~ v1.2.1），v2.0.0 仅 alpha、latest 为别名
+  - id: cloudpan189-share
+    target: service
+    service: cloudpan189-share
+    source: xxcheng123/cloudpan189-share
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: 天翼订阅小站
+    summary: "天翼云盘智能文件分享管理工具，分享链接转目录结构，WebDAV 统一访问"

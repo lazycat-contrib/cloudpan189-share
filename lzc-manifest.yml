@@ -1,0 +1,16 @@
+application:
+  subdomain: cloudpan189-share
+  background_task: true
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://cloudpan189-share:12395/
+
+services:
+  cloudpan189-share:
+    # upstream: xxcheng123/cloudpan189-share:v1.2.1
+    image: xxcheng123/cloudpan189-share:v1.2.1
+    binds:
+      - /lzcapp/var/data:/app/data
+      - /lzcapp/var/media:/app/media_dir

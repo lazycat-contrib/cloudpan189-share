@@ -1,0 +1,14 @@
+package: community.lazycat.app.cloudpan189-share
+version: 1.2.1
+name: 天翼订阅小站
+description: "一款专为天翼云盘设计的智能文件分享管理工具。该系统能够将天翼云盘的分享链接转换为标准的目录结构，并通过 WebDAV 协议提供统一的文件访问接口。"
+min_os_version: "1.3.8"
+homepage: https://github.com/xxcheng123/cloudpan189-share
+author: xxcheng123
+locales:
+  zh:
+    description: "一款专为天翼云盘设计的智能文件分享管理工具。该系统能够将天翼云盘的分享链接转换为标准的目录结构，并通过 WebDAV 协议提供统一的文件访问接口。"
+    name: 天翼订阅小站
+  en:
+    description: "A smart file sharing and management tool specifically designed for Tianyi Cloud Drive. This system can convert shared links from Tianyi Cloud Drive into a standard directory structure and provide a unified file access interface through the WebDAV protocol."
+    name: CloudPan189 Share
